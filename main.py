@@ -68,7 +68,7 @@ class GUI:
         mass = random.randint(1,100)
         self.objects.append(Object(e.x, e.y, mass))
 
-    def draw(self, step):
+    def draw(self):
         self.canvas.delete(tk.ALL)
         self.canvas.create_oval(self.center.s[0] - 5, self.center.s[1] - 5, self.center.s[0] + 5, self.center.s[1] + 5, fill='black')
         for i in range(len(self.objects)):
@@ -83,6 +83,6 @@ class GUI:
 
 gui = GUI()
 while gui.run:
-    gui.draw(step)
+    gui.draw()
     gui.root.update()
     time.sleep(step)
